@@ -41,7 +41,9 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Task::create(['title' => $request->get('title')]);
+
+        return redirect('/');
     }
 
     /**
