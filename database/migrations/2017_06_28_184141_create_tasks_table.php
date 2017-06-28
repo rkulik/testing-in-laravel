@@ -23,8 +23,6 @@ class CreateTasksTable extends Migration
             function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('title');
-                $table->text('body');
-                $table->boolean('completed');
                 $table->timestamps();
             }
         );
