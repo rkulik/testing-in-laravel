@@ -7,12 +7,12 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 /**
- * Class BrowseTasksTest
+ * Class ViewTasksTest
  * @package Tests\Feature
  *
  * @author René Kulik <info@renekulik.de>
  */
-class BrowseTasksTest extends TestCase
+class ViewTasksTest extends TestCase
 {
     use DatabaseMigrations;
 
