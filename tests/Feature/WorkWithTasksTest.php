@@ -20,7 +20,7 @@ class WorkWithTasksTest extends TestCase
     public function a_user_can_create_tasks()
     {
         $task = factory(Task::class)->make();
-        
+
         $this->post('/tasks', $task->toArray());
 
         $this->get('/')
