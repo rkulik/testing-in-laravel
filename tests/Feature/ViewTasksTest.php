@@ -19,10 +19,12 @@ class ViewTasksTest extends TestCase
     /** @test */
     public function a_user_can_view_a_list_of_tasks()
     {
-        $task = factory(Task::class)->create();
+        $task1 = factory(Task::class)->create();
+        $task2 = factory(Task::class)->create();
 
         $this->get('/')
             ->assertStatus(200)
-            ->assertSee($task->title);
+            ->assertSee($task1->title)
+            ->assertSee($task2->title);
     }
 }
