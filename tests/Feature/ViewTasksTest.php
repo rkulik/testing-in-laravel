@@ -17,7 +17,7 @@ class ViewTasksTest extends TestCase
     use DatabaseMigrations;
 
     /** @test */
-    public function a_user_can_browse_tasks()
+    public function a_user_can_view_a_list_of_tasks()
     {
         $task = factory(Task::class)->create();
 
