@@ -23,6 +23,8 @@ class WorkWithTasksTest extends TestCase
 
         $this->post('/tasks', $task->toArray());
 
+        $this->assertDatabaseHas(Task::TABLE_NAME, ['title' => $task->title]);
+
         $this->get('/')
             ->assertStatus(200)
             ->assertSee($task->title);
@@ -33,7 +35,9 @@ class WorkWithTasksTest extends TestCase
     {
         $task = factory(Task::class)->create(['id' => 1]);
 
-        $this->delete('/tasks/1');
+        $this->delete(\sprintf('/tasks/%d', $task->id));
+
+        $this->assertDatabaseMissing(Task::TABLE_NAME, ['id' => $task->id]);
 
         $this->get('/')
             ->assertStatus(200)
