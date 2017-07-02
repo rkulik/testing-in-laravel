@@ -17,7 +17,7 @@ class WorkWithTasksTest extends TestCase
     use DatabaseMigrations;
 
     /** @test */
-    public function a_user_can_create_tasks()
+    public function a_user_can_create_a_task()
     {
         $task = factory(Task::class)->make();
 
@@ -31,7 +31,7 @@ class WorkWithTasksTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_delete_tasks()
+    public function a_user_can_delete_a_task()
     {
         $task = factory(Task::class)->create(['id' => 1]);
 
