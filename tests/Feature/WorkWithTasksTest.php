@@ -16,8 +16,10 @@ class WorkWithTasksTest extends TestCase
 {
     use DatabaseMigrations;
 
-    /** @test */
-    public function a_user_can_create_a_task()
+    /**
+     *
+     */
+    public function testUserCanCreateTask()
     {
         $task = factory(Task::class)->make();
 
@@ -30,8 +32,10 @@ class WorkWithTasksTest extends TestCase
             ->assertSee($task->title);
     }
 
-    /** @test */
-    public function a_user_can_delete_a_task()
+    /**
+     *
+     */
+    public function testUserCanDeleteTask()
     {
         $task = factory(Task::class)->create(['id' => 1]);
 

@@ -16,8 +16,10 @@ class ViewApiTasksTest extends TestCase
 {
     use DatabaseMigrations;
 
-    /** @test */
-    public function a_user_can_view_a_list_of_tasks()
+    /**
+     *
+     */
+    public function testUserCanViewListOfTasks()
     {
         $task1 = factory(Task::class)->create();
         $task2 = factory(Task::class)->create();
