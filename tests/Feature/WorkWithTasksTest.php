@@ -39,6 +39,8 @@ class WorkWithTasksTest extends TestCase
     {
         $task = factory(Task::class)->create(['id' => 1]);
 
+        $this->assertDatabaseHas(Task::TABLE_NAME, ['id' => $task->id]);
+
         $this->delete(\sprintf('/tasks/%d', $task->id));
 
         $this->assertDatabaseMissing(Task::TABLE_NAME, ['id' => $task->id]);
