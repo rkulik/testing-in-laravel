@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Dusk\DuskServiceProvider;
 use League\Fractal\Manager;
 use League\Fractal\Serializer\JsonApiSerializer;
 
@@ -33,5 +34,9 @@ class AppServiceProvider extends ServiceProvider
                 return $manager;
             }
         );
+
+        if (\in_array($this->app->environment(), ['local', 'testing'])) {
+            $this->app->register(DuskServiceProvider::class);
+        }
     }
 }
